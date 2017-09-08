@@ -347,7 +347,7 @@ namespace SGF.Network.KCP
                 if (bufferSize > mss)
                     size = (int)mss;
                 else
-                    size = bufferSize;
+                    size = bufferSize - offset;
 
                 var seg = new Segment(size);
                 Array.Copy(buffer, offset, seg.data, 0, size);
